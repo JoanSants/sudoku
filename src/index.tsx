@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components'
 
 import { reportWebVitals } from './core'
 import { GlobalStyles, theme } from './styles'
-import { Content, Title, Card } from './components'
+import { Content, Title, Card, Grid } from './components'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,7 +12,9 @@ ReactDOM.render(
       <GlobalStyles />
       <Content>
         <Title>Sudoku</Title>
-        <Card>This is a work in progress</Card>
+        <Card>
+          <Grid />
+        </Card>
       </Content>
     </ThemeProvider>
   </React.StrictMode>,
