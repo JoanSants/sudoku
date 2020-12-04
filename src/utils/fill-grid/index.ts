@@ -22,18 +22,18 @@ const fillGrid = (grid: GRID) => {
       shuffle(numbers)
 
       for (let value of numbers) {
-        if (!isInRow({ grid, row, value })) {
+        if (!isInRow({ grid, row, value }))
           if (!isInCol({ col, grid, value })) {
             const square = identifySquare({ col, grid, row })
             if (!isInSquare({ square, value })) {
               grid[row][col] = value
               if (checkGrid(grid)) return true
-              if (fillGrid(grid)) return true
+              else if (fillGrid(grid)) return true
             }
           }
-        }
-        break
       }
+
+      break
     }
   }
 
