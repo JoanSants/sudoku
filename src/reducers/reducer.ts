@@ -1,10 +1,15 @@
-import { relative } from 'path'
 import { AnyAction } from 'redux'
 
-const initialState = {}
+import { createFullGrid } from '../utils'
+import { IReducer } from './interfaces'
+import * as types from './types'
 
-export default (state = initialState, action: AnyAction) => {
+const initialState: IReducer = {}
+
+export default (state = initialState, action: AnyAction): IReducer => {
   switch (action.type) {
+    case types.CREATE_GRID:
+      return { ...state, grid: createFullGrid() }
     default:
       return state
   }
