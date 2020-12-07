@@ -1,18 +1,25 @@
 import { AnyAction } from 'redux'
 
-import { createFullGrid } from '../utils'
+import { copyGrid, createFullGrid, removeNumbers } from '../utils'
 import { IReducer } from './interfaces'
 import * as types from './types'
 
 const initialState: IReducer = {}
 
-export default (state = initialState, action: AnyAction): IReducer => {
+const reducer = (state = initialState, action: AnyAction): IReducer => {
   switch (action.type) {
     case types.CREATE_GRID:
-      return { ...state, grid: createFullGrid() }
+      const solvedGrid = createFullGrid()
+      const gridCopy = copyGrid(solvedGrid)
+      const challengeGrid = removeNumbers(gridCopy)
+      const workingGrid = copyGrid(challengeGrid)
+
+      return { ...state, challengeGrid, solvedGrid, workingGrid }
     case types.SELECT_BLOCK:
       return { ...state, selectedBlock: action.coords }
     default:
       return state
   }
 }
+
+export default reducer
