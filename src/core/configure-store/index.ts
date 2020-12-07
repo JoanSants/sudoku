@@ -3,8 +3,10 @@ import { devToolsEnhancer } from 'redux-devtools-extension'
 
 import reducer from '../../reducers'
 
-export default (initialState = {}) => {
+const configureStore = (initialState = {}) => {
   const store = createStore(reducer, initialState, devToolsEnhancer({}))
 
   return store
 }
+
+export default configureStore

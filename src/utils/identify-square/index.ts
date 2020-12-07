@@ -1,6 +1,6 @@
-import { GRID, SQUARE, SQUARE_ROW } from '../../typings'
+import { GRID, SQUARE } from '../../typings'
 
-export default ({
+const identifySquare = ({
   col,
   grid,
   row,
@@ -47,3 +47,5 @@ export default ({
 
   return square as SQUARE
 }
+
+export default identifySquare

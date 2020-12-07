@@ -1,6 +1,6 @@
 import { GRID, NUMBERS } from '../../../typings'
 
-export default ({
+const isInRow = ({
   grid,
   row,
   value,
@@ -9,3 +9,5 @@ export default ({
   row: number
   value: NUMBERS
 }): boolean => grid[row].includes(value)
+
+export default isInRow

@@ -2,7 +2,7 @@ import { GRID } from '../../typings'
 
 import { fillGrid } from '../'
 
-export default (): GRID => {
+const createFullGrid = (): GRID => {
   const grid: GRID = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -17,3 +17,5 @@ export default (): GRID => {
   fillGrid(grid)
   return grid
 }
+
+export default createFullGrid

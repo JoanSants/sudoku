@@ -1,6 +1,6 @@
 import { GRID, NUMBERS } from '../../../typings'
 
-export default ({
+const isInCol = ({
   col,
   grid,
   value,
@@ -14,3 +14,5 @@ export default ({
   }
   return false
 }
+
+export default isInCol
