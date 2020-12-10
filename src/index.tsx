@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 
 import { reportWebVitals, configureStore } from './core'
 import { GlobalStyles, theme } from './styles'
-import { Content, Title, Card, Grid, Numbers } from './components'
+import { Content, Title, Card, Grid, NewButton, Numbers } from './components'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +15,7 @@ ReactDOM.render(
         <Content>
           <Title>Sudoku</Title>
           <Card>
+            <NewButton />
             <Grid />
             <Numbers />
           </Card>
